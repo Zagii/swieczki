@@ -43,6 +43,9 @@ export class WykresDataComponent implements OnInit, OnChanges {
   onChartInit(ec): void {
     console.log('ChartInit');
     this.echartsIntance = ec;
+    //  this.echartsIntance.resize({
+    //  height: 1000
+    // });
     // console.log(ec);
     //  setTimeout((() => { this.aktualizujDane(); }), 2000);
     // this.aktualizujDane();
@@ -140,7 +143,7 @@ export class WykresDataComponent implements OnInit, OnChanges {
         var obj = {
           top: 10
         };
-       // console.log(pos);
+        // console.log(pos);
         obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
         return obj;
       }

@@ -110,8 +110,7 @@ export class KalkulacjeService {
         this.swieczki1minSubj.next(this.dataTab1m);
         break;
       case '15m':
-        while (this.dataTab15m.length > this.maxSwieczek)
-          this.dataTab15m.shift();
+        while (this.dataTab15m.length > this.maxSwieczek) this.dataTab15m.shift();
         this.dataTab15m.push(c);
         this.swieczki15minSubj.next(this.dataTab15m);
         break;
