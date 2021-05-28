@@ -1,0 +1,8 @@
+<h2>Pary</h2>
+<ul>
+  <li *ngFor="let para of pary" > 
+    symbol: <a  routerLink="/para/{{para['symbol']}}">
+    {{ para["symbol"] }}</a>, podstawa {{para["baseAsset"]}}, quota: {{para["quoteAsset"]}} <a  routerLink="/automat/{{para['symbol']}}">
+    automat</a>
+  </li>
+ </ul>

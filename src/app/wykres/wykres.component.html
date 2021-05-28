@@ -1,0 +1,22 @@
+<p>
+wykres works!
+</p>
+<div echarts 
+ (chartInit)="onChartInit($event)"
+  [options]="chartOption" class="demo-chart"></div>
+<button (click)='btnClick()'>odswiez</button>
+ <h2>tab swieczki 15min</h2>
+ minKurs: {{minKurs}}, maxKurs: {{maxKurs}}, aktualnyKurs: {{aktualnyKurs}}, różnica: $ , tj: %
+<ul>
+  <li *ngFor="let swieca of dataTab15m;let i=index " > 
+   time={{dataTab15m[i]["openTime"]}}, <br>
+   open={{dataTab15m[i]["open"]}}->{{swieczki15m[i][0]}}<br>
+   close={{dataTab15m[i]["close"]}}->{{swieczki15m[i][1]}}<br>
+   low={{dataTab15m[i]["low"]}}->{{swieczki15m[i][2]}}<br>
+   high={{dataTab15m[i]["high"]}}->{{swieczki15m[i][3]}}<br>
+   volume={{dataTab15m[i]["volume"]}}->{{swieczki15m[i][4]}}
+
+  </li>
+ </ul>
+
+

@@ -1,0 +1,40 @@
+<h1>Debug WebSocket</h1>
+<button (click)='connectWSclick(true)'>Polacz</button>
+<button (click)='connectWSclick(false)'>Rozlacz</button>
+Stan: {{connectionStatus}}
+{{resultResp}}
+<hr>
+<button (click)='getListOfSubscriptions()'>Pobierz liste subskrypcji</button>
+{{listOfSubsctiptionsResp}}
+<hr>
+public connectWSclick(flaga)
+<hr>
+Wybierz sybmol:
+<hr>
+<button (click)='aggTrade(true)'>aggTrade on</button>
+<button (click)='aggTrade(false)'>aggTrade off</button>
+{{aggTradeResp}}
+<hr>
+<button (click)='depth(true)'>depth on</button>
+<button (click)='depth(false)'>depth off</button>
+{{depthResp}}
+<hr>
+<button (click)='trade(true)'>trade on</button>
+<button (click)='trade(false)'>trade off</button>
+{{tradeResp}}
+<hr>
+<button (click)='swieczki(true,"1m")'>swieczki on</button>
+<button (click)='swieczki(faalse,"1m")'>swieczki off</button>
+{{swieczkiResp}}
+<hr>
+<button (click)='miniTicker(true)'>miniTicker on</button>
+<button (click)='miniTicker(false)'>miniTicker off</button>
+{{miniTickerResp}}
+<hr>
+<button (click)='ticker(true)'>ticker on</button>
+<button (click)='ticker(false)'>ticker off</button>
+{{tickerResp}}
+<hr>
+<button (click)='bookTicker(true)'>bookTicker on</button>
+<button (click)='bookTicker(false)'>bookTicker off</button>
+{{bookTickerResp}}

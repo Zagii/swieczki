@@ -1,0 +1,16 @@
+<p>ekran-automat {{symbol}} <br /></p>
+<a class="btn btn-lg btn-primary" href="" role="button">View tutorial</a>
+<div *ngIf="calcObj">
+  min: {{calcObj.data.minKurs}} <br />
+  max: {{calcObj.data.maxKurs}}
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-wykres-data [symbol]="symbol" [inputData]="swieczki15m" [interwal]='"15m"'></app-wykres-data>
+    </div>
+    <div class="col">
+      <app-wykres-data [symbol]="symbol" [inputData]="swieczki1m" [interwal]='"1m"'></app-wykres-data>
+    </div>
+  </div>
+</div>

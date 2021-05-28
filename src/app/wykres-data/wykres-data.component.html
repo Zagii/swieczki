@@ -1,0 +1,12 @@
+<p>
+wykres-data {{symbol}} works!
+</p>
+<div *ngIf="inputData">     <!--If "product" exists-->
+      <h2>Interwał: {{interwal}}</h2><hr>
+      <h4>Name: {{ inputData[inputData.length-1].close}}</h4>
+    </div>
+
+
+<div echarts 
+ (chartInit)="onChartInit($event)"
+  [options]="chartOption" class="demo-chart"></div>
