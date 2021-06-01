@@ -1,7 +1,7 @@
 <p>ekran-automat {{symbol}} <br /></p>
 <a class="btn btn-lg btn-primary" href="" role="button">Vrial</a>
 <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Action
   </button>
   <div class="dropdown-menu">
@@ -11,16 +11,17 @@
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#">Separated link</a>
   </div>
-  <div *ngIf="calcObj" class="container">
-    <div class="row">
-      <div class="col bg-success text-white">max: {{calcObj.data.maxKurs}}</div>
+</div>
+<div *ngIf="calcObj" class="container">
+  <div class="row">
+    <div class="col bg-success text-white">max: {{calcObj.data.maxKurs}}</div>
 
-    </div>
   </div>
+
   <div class="p-3 mb-2 bg-secondary text-white">kurs: {{calcObj.data.kurs}}</div>
   <div class="p-3 mb-2 bg-danger text-white"> min: {{calcObj.data.minKurs}} </div>
-
 </div>
+
 <div class="container">
   <div class="row">
     <div class="col">
