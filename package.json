@@ -19,6 +19,7 @@
     "resize-observer-polyfill": ">=1.5.1",
     "rxjs": "6.1.0",
     "rxjs-compat": "6.2.2",
+    "util.js": "^0.0.0",
     "zone.js": "0.8.26"
   },
   "scripts": {
