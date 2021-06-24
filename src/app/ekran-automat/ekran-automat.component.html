@@ -3,35 +3,57 @@
           tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Simple demo
   </button>
-<a class="btn btn-lg btn-primary" href="" role="button">Vrial</a>
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Action</button>
-  <button type="button" id="dropdownMenuButton" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
-  <div class="btn-group" dropdown>
-    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-          aria-controls="dropdown-basic">
-    Button dropdown <span class="caret"></span>
-  </button>
-    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-      <li class="divider dropdown-divider"></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-      </li>
-    </ul>
-  </div>
-</div>
+
 <div *ngIf="calcObj" class="container">
+
+  <div class="row bg-primary text-white">
+    <div class="col-sm-2 bg-secondary text-white ">Konfiguracja</div>
+    <div class="col-sm-3">
+      <label class="bg-primary text-white" for="selectOkres">Okno czasowe</label>
+      <select class="form-select" id="selectOkres" (change)="updateOkres($event)">
+       <option value={{wybranyOkres}}>{{dropdownOkres[wybranyOkres].opis}}</option>
+       <option  disabled="disabled">---okres---</option>
+        <option  *ngFor="let x of dropdownOkres; let i = index" [value]="i">
+         {{x.opis}}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-sm-1 bg-success text-white">
+      <label for="progBUY">Próg BUY</label>
+      <input type="text" class="form-control" id="progBUY" placeholder="100%">
+    </div>
+
+    <div class="col-sm-1 bg-danger text-white">
+      <label for="progSELL">Próg SELL</label>
+      <input type="text" class="form-control" id="progSELL" placeholder="100%">
+    </div>
+
+    <div class="col-sm-1 bg-warning text-dark">
+      <label for="wartosc" >Wartość</label>
+      <input type="text" class="form-control" id="wartosc" placeholder="1$">
+    </div>
+  </div>
+  <div class="row bg-primary text-white">
+    <div class="col-sm-2 bg-secondary text-white ">StopLoss</div>
+
+    <div class="col-sm-1">
+      <label for="poczatekSL">Początek</label>
+      <input  [(ngModel)]="poczatekSL" type="text" class="form-control" id="poczatekSL" placeholder="1%" (change)="changeSL()">
+    </div>
+    <div class="col-sm-1">
+      <label for="przyrostSL">Przyrost</label>
+      <input  [(ngModel)]="przyrostSL" type="text" class="form-control" id="przyrostSL" placeholder="10%"
+       tooltip="Po jakim zarokbu zwiększyć poziom SL."(change)="changeSL()">
+    </div>
+    <div class="col-sm-1">
+      <label for="deltaSL">Delta</label>
+      <input [(ngModel)]="deltaSL" type="text" class="form-control" id="deltaSL" placeholder="10%"
+       tooltip="O ile powiekszyć margines SL." (change)="changeSL()">
+    </div>
+  </div>
+
+
   <div class="row">
     <div class="col bg-success text-white">max: {{calcObj.data.maxKurs}}</div>
 
