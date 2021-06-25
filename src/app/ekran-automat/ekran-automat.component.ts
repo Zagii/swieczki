@@ -31,9 +31,14 @@ export class EkranAutomatComponent implements OnInit, OnDestroy {
   count15min: number;
   calcObj: KalkulacjeObjct;
 
-  deltaSL: number;
-  poczatekSL:number;
-  przyrostSL:number;
+  deltaSL: number = 10;
+  poczatekSL: number = 1;
+  przyrostSL: number = 15;
+  progBuyProc: number = 100;
+  progBuyKwota: number = 100;
+  progSellProc: number = 100;
+  progSellKwota: number = 100;
+  wartoscZakladu:number=1;
 
   private calcObjSub: Subject<KalkulacjeObjct>;
 

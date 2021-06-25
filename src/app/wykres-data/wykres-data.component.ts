@@ -20,6 +20,7 @@ export class WykresDataComponent implements OnInit, OnChanges {
   @Input() symbol: string;
   @Input() inputData: Candle[];
   @Input() interwal: string;
+  @Input() okres: number; //linia pionowa odgradzajaca obserwowany okres
   differ: any;
 
   swieczki = [];

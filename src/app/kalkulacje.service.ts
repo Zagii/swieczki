@@ -76,16 +76,14 @@ export class KalkulacjeService {
     if (this.dataTab15m && this.dataTab15m.length > 0)
       ostatnia15m = this.dataTab15m[this.dataTab15m.length - 1];
 
-    if (ostatnia1m && ostatnia15m) {
-      if (ostatnia1m.openTime > ostatnia15m.openTime)
-        this.calcObj.data.kurs = +ostatnia1m.close;
-    } else if (ostatnia1m) this.calcObj.data.kurs = +ostatnia1m.close;
+    if (ostatnia1m) this.calcObj.data.kurs = +ostatnia1m.close;
     else if (ostatnia15m) this.calcObj.data.kurs = +ostatnia15m.close;
     else {
       console.log('ERR kalkulacje:calcUpdate');
       return;
     }
-
+ // this.calcObj.data.kurs = +c.close;
+        //this.calcObjSubj.next(this.calcObj);
     let marginPips =
       (this.calcObj.data.kurs * this.calcObj.parametry.marginesProcent) / 100;
     this.calcObj.data.buyLvl = this.calcObj.data.kurs + marginPips;
@@ -110,7 +108,8 @@ export class KalkulacjeService {
         this.swieczki1minSubj.next(this.dataTab1m);
         break;
       case '15m':
-        while (this.dataTab15m.length > this.maxSwieczek) this.dataTab15m.shift();
+        while (this.dataTab15m.length > this.maxSwieczek)
+          this.dataTab15m.shift();
         this.dataTab15m.push(c);
         this.swieczki15minSubj.next(this.dataTab15m);
         break;
@@ -122,6 +121,8 @@ export class KalkulacjeService {
       case '1m':
         this.dataTab1m[this.dataTab1m.length - 1] = c;
         this.swieczki1minSubj.next(this.dataTab1m);
+       
+        this.calcParamsUpdate();
         break;
       case '15m':
         this.dataTab15m[this.dataTab15m.length - 1] = c;
