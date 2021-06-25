@@ -323,6 +323,21 @@ export class WykresDataComponent implements OnInit, OnChanges {
             borderColor: 'black',
             borderColor0: '#444'
           }
+        },
+        markArea: {
+          itemStyle: {
+            color: '#f00'
+          },
+          data: [
+            [
+              {
+                yAxis: 32000
+              },
+              {
+                yAxis: 30000
+              }
+            ]
+          ]
         }
       },
       {
@@ -333,6 +348,21 @@ export class WykresDataComponent implements OnInit, OnChanges {
         showSymbol: false,
         lineStyle: {
           width: 1
+        },
+        markArea: {
+          itemStyle: {
+            color: '#0f0'
+          },
+          data: [
+            [
+              {
+                yAxis: 60000
+              },
+              {
+                yAxis: 34000
+              }
+            ]
+          ]
         }
       },
       {
